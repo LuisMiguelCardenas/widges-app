@@ -53,5 +53,17 @@ const appMenuItems = <MenuItem>[
       title: 'Scroll infinito y Pull',
       subtitle: 'Pantalla de scroll inifnito de la aplicación',
       link: '/infinite',
-      icon: Icons.list_alt_sharp)
+      icon: Icons.list_alt_sharp),
+  MenuItem(
+      title: 'Counter',
+      subtitle: 'Contador con riverpod',
+      link: '/counter',
+      icon: Icons.countertops),
+        MenuItem(
+      title: 'Cambiar Tema',
+      subtitle: 'Cambiar el tema de la aplicacion',
+      link: '/theme-changer',
+      icon: Icons.color_lens)
 ];
+
+

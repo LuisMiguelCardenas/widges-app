@@ -12,18 +12,20 @@ const colorList = <Color>[
 
 class AppTheme {
   final int selectedColor;
+  final bool isDarkTheme;
 
-  AppTheme({required this.selectedColor})
-      : assert(selectedColor >= 0, 'Selected color must be greater then 0'),
-       assert(selectedColor < colorList.length -1, 'Selected color must be less or equal than ${colorList.length} ');
+  AppTheme({
+    this.selectedColor = 0,
+    this.isDarkTheme = false,
+  })  : assert(selectedColor >= 0, 'Selected color must be greater then 0'),
+        assert(selectedColor < colorList.length - 0,
+            'Selected color must be less or equal than ${colorList.length - 1} ');
 
   ThemeData getTheme() {
     return ThemeData(
-        useMaterial3: true, 
+        useMaterial3: true,
+        brightness: isDarkTheme ? Brightness.dark : Brightness.light,
         colorSchemeSeed: colorList[selectedColor],
-        appBarTheme: const AppBarTheme(
-          centerTitle: true
-        )
-        );
+        appBarTheme: const AppBarTheme(centerTitle: true));
   }
 }
